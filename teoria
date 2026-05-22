@@ -1,0 +1,1224 @@
+<!DOCTYPE html>
+<html lang="es">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de la Matriz Documentaria en el Transporte Internacional</title>
+    <style>
+        /* ==========================================================================
+           RESETEO Y ESTILOS BASE
+           ========================================================================== */
+        * {
+            box-sizing: border-box;
+        }
+
+
+        body {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: #F8FAFC;
+            color: #334155;
+            line-height: 1.6;
+            padding: 20px 10px;
+            font-size: 16px;
+            margin: 0;
+        }
+
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background-color: #FFFFFF;
+            padding: 40px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            border-radius: 8px;
+            border-top: 6px solid #0F172A;
+        }
+
+
+        /* ==========================================================================
+           JERARQUÍA TIPOGRÁFICA (TÍTULOS EN MAYÚSCULAS POR REGLA)
+           ========================================================================== */
+        h1,
+        h2,
+        h3,
+        h4 {
+            text-transform: uppercase;
+            color: #0F172A;
+            margin-top: 0;
+            line-height: 1.3;
+        }
+
+
+        h1 {
+            font-size: 28px;
+            border-bottom: 4px solid #00796B;
+            padding-bottom: 15px;
+            margin-bottom: 25px;
+        }
+
+
+        h2 {
+            font-size: 22px;
+            border-bottom: 2px solid #E2E8F0;
+            padding-bottom: 10px;
+            margin-top: 45px;
+            margin-bottom: 25px;
+        }
+
+
+        h3 {
+            font-size: 18px;
+            color: #00796B;
+            margin-top: 35px;
+            margin-bottom: 15px;
+        }
+
+
+        h4 {
+            font-size: 16px;
+            margin-top: 25px;
+            margin-bottom: 10px;
+        }
+
+
+        p {
+            margin-bottom: 18px;
+            font-size: 16px;
+        }
+
+
+        strong {
+            color: #0F172A;
+            font-weight: 700;
+        }
+
+
+        hr {
+            border: 0;
+            height: 2px;
+            background-color: #E2E8F0;
+            margin: 35px 0;
+        }
+
+
+        /* ==========================================================================
+           TÉRMINOS TÉCNICOS (GLOSARIO)
+           ========================================================================== */
+        .termino-tecnico {
+            color: #319795;
+            font-style: italic;
+            font-weight: 600;
+            background-color: #E6FFFA;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 15px;
+        }
+
+
+        /* ==========================================================================
+           SISTEMA DE NAVEGACIÓN Y TOC
+           ========================================================================== */
+        .nav-toc {
+            background-color: #F8FAFC;
+            border: 1px solid #E2E8F0;
+            border-left: 6px solid #0F172A;
+            padding: 24px;
+            margin-bottom: 40px;
+            margin-top: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.04);
+        }
+
+
+        .nav-toc-title {
+            margin-top: 0;
+            color: #0F172A;
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            border-bottom: 2px solid #E2E8F0;
+            padding-bottom: 10px;
+        }
+
+
+        .nav-toc-list {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+
+        .nav-toc-item {
+            margin-bottom: 12px;
+            font-weight: 600;
+            color: #334155;
+            font-size: 16px;
+            display: block;
+            background: none;
+            padding-left: 0;
+        }
+
+
+        .nav-toc-link {
+            color: #1D4ED8;
+            text-decoration: none;
+            transition: color 0.3s ease, background-color 0.3s ease;
+            display: inline-block;
+            padding: 6px 10px;
+            border-radius: 4px;
+            line-height: 1.4;
+        }
+
+
+        .nav-toc-link:hover {
+            color: #1E3A8A;
+            background-color: #DBEAFE;
+            text-decoration: none;
+        }
+
+
+        .nav-return-container {
+            text-align: right;
+            margin-top: 40px;
+            margin-bottom: 40px;
+            padding-top: 15px;
+            border-top: 2px dashed #CBD5E1;
+        }
+
+
+        .nav-return-btn {
+            display: inline-block;
+            font-size: 14px;
+            font-weight: 700;
+            color: #FFFFFF;
+            text-decoration: none;
+            padding: 12px 24px;
+            background-color: #0F172A;
+            border-radius: 6px;
+            text-transform: uppercase;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+
+        .nav-return-btn:hover {
+            background-color: #334155;
+            color: #FFFFFF;
+        }
+
+
+        /* ==========================================================================
+           LISTAS GENERALES
+           ========================================================================== */
+        .content-list {
+            list-style-type: none;
+            padding: 0;
+            margin-bottom: 20px;
+        }
+
+
+        .content-list li {
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"><path fill="%2300796b" d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>') no-repeat left 2px / 20px 20px;
+            padding-left: 30px;
+            margin-bottom: 10px;
+            line-height: 1.8;
+        }
+
+
+        /* ==========================================================================
+           TABLAS (ANCHOS FIJOS, SIN ETIQUETAS PROHIBIDAS)
+           ========================================================================== */
+        .table-container {
+            overflow-x: auto;
+            margin: 25px 0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            border-radius: 6px;
+        }
+
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: #FFFFFF;
+            min-width: 600px;
+            table-layout: fixed;
+        }
+
+
+        table tr:first-child {
+            background-color: #0F172A;
+        }
+
+
+        table tr:first-child th {
+            color: #FFFFFF;
+            font-size: 15px;
+            border: 1px solid #0F172A;
+            padding: 14px;
+            text-align: left;
+            font-weight: 600;
+        }
+
+
+        table th,
+        table td {
+            border: 1px solid #CBD5E1;
+            padding: 14px;
+            text-align: left;
+            vertical-align: top;
+            font-size: 14px;
+            word-wrap: break-word;
+        }
+
+
+        table tr:nth-child(even) {
+            background-color: #F8FAFC;
+        }
+
+
+        /* ==========================================================================
+           COMPONENTES: CASOS DE ÉXITO Y FÓRMULAS
+           ========================================================================== */
+        .case-card {
+            background-color: #FFFFFF;
+            border: 1px solid #E2E8F0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            border-left: 5px solid #0F172A;
+            padding: 24px;
+            border-radius: 8px;
+            margin-bottom: 25px;
+            margin-top: 20px;
+        }
+
+
+        .case-card h4 {
+            border-bottom: 2px solid #E0F2F1;
+            padding-bottom: 10px;
+            margin-top: 0;
+            color: #00796B;
+        }
+
+
+        .ficha-exito {
+            display: block;
+            background-color: #F0FDF4;
+            border: 1px solid #BBF7D0;
+            border-left: 5px solid #16A34A;
+            padding: 16px;
+            border-radius: 6px;
+            margin-bottom: 16px;
+        }
+
+
+        .ficha-dato {
+            font-size: 15px;
+            color: #334155;
+            margin-bottom: 10px;
+            line-height: 1.5;
+        }
+
+
+        .ficha-dato strong {
+            color: #16A34A;
+            display: block;
+            text-transform: uppercase;
+            font-size: 12px;
+            margin-bottom: 4px;
+            letter-spacing: 0.5px;
+        }
+
+
+        .case-result {
+            background-color: #F8FAFC;
+            padding: 16px;
+            margin-top: 16px;
+            border-radius: 4px;
+            border-left: 4px solid #0284C7;
+            font-size: 15px;
+        }
+
+
+        .math-block {
+            background-color: #F1F5F9;
+            padding: 20px;
+            text-align: center;
+            font-family: monospace;
+            font-size: 18px;
+            font-weight: 600;
+            color: #0F172A;
+            border-radius: 6px;
+            margin: 20px 0;
+            border: 1px solid #CBD5E1;
+        }
+
+
+        /* ==========================================================================
+           NUEVO COMPONENTE: IMÁGENES
+           ========================================================================== */
+        .image-card {
+            background-color: #fff;
+            padding: 15px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            max-width: 500px;
+            margin: 20px auto;
+            overflow: hidden;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+
+        .image-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+        }
+
+
+        .image-card img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            display: block;
+            transition: transform 0.3s ease;
+            cursor: pointer;
+        }
+
+
+        .image-card img:hover {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+
+
+<body>
+
+
+    <div class="container">
+
+
+        <!-- ANCLA PRINCIPAL -->
+        <a name="indice-principal" id="indice-principal"></a>
+
+
+        <h1>GESTIÓN DE LA MATRIZ DOCUMENTARIA EN EL TRANSPORTE INTERNACIONAL</h1>
+        <p><strong>Instructor:</strong> Licenciado David Fernando Huamán Román</p>
+        <p><strong>Objetivo de la sesión:</strong> Capacitar al estudiante para identificar, diferenciar y auditar
+            rigurosamente los datos críticos de una matriz documentaria, mitigando contingencias operativas mediante el
+            análisis de casos hiperrealistas y el dominio del flujo de información logística.</p>
+
+
+        <!-- BLOQUE DEL ÍNDICE DE CONTENIDOS -->
+        <div class="nav-toc">
+            <div class="nav-toc-title">ÍNDICE DE CONTENIDOS</div>
+            <ul class="nav-toc-list">
+                <li class="nav-toc-item">
+                    ▸ <a class="nav-toc-link" href="#seccion-1" target="_self">1. INTRODUCCIÓN: LA MATRIZ COMO
+                        HERRAMIENTA DE CONTROL CORPORATIVO</a>
+                </li>
+                <li class="nav-toc-item">
+                    ▸ <a class="nav-toc-link" href="#seccion-2" target="_self">2. EL IDIOMA DEL TRANSPORTE: CÓDIGOS
+                        INTERNACIONALES DE NODOS LOGÍSTICOS</a>
+                </li>
+                <li class="nav-toc-item">
+                    ▸ <a class="nav-toc-link" href="#seccion-3" target="_self">3. PARÁMETROS MÉTRICOS: FLETE, PESO
+                        FÍSICO Y PESO VOLUMÉTRICO</a>
+                </li>
+                <li class="nav-toc-item">
+                    ▸ <a class="nav-toc-link" href="#seccion-4" target="_self">4. VARIABLES CRÍTICAS (MINI-GUÍAS
+                        OPERATIVAS PARA LLENAR LA MATRIZ)</a>
+                </li>
+                <li class="nav-toc-item">
+                    ▸ <a class="nav-toc-link" href="#seccion-5" target="_self">5. ESTRUCTURA DE DATOS: LA ANATOMÍA
+                        MILIMÉTRICA DE LOS TÍTULOS DE TRANSPORTE</a>
+                </li>
+                <li class="nav-toc-item">
+                    ▸ <a class="nav-toc-link" href="#seccion-6" target="_self">6. TRANSMISIÓN DIGITAL Y EL "DOC
+                        CUT-OFF"</a>
+                </li>
+                <li class="nav-toc-item">
+                    ▸ <a class="nav-toc-link" href="#seccion-7" target="_self">7. DESCOMPOSICIÓN ESTRUCTURAL: EL CÓDIGO
+                        DEL CONTENEDOR (ISO 6346)</a>
+                </li>
+            </ul>
+        </div>
+
+
+        <hr>
+
+
+        <!-- SECCIÓN 1 -->
+        <a name="seccion-1" id="seccion-1"></a>
+        <h2>1. INTRODUCCIÓN: LA MATRIZ COMO HERRAMIENTA DE CONTROL CORPORATIVO</h2>
+
+
+        <p>En el comercio internacional, la carga física no se mueve si la información no viaja primero. Antes de que se
+            emitan los documentos de transporte finales, los operadores logísticos (empresas que diseñan, gestionan y
+            controlan la cadena de suministro) utilizan la <strong>Matriz Documentaria</strong>.</p>
+
+
+        <p>No es un contrato final, sino un documento borrador o formulario estructurado que el exportador remite al
+            transportista (naviera, aerolínea o transportista terrestre) para validar variables críticas antes de la
+            impresión del título final. Es vital destacar que todos los datos declarados en esta matriz (pesos, bultos,
+            descripciones) provienen obligatoriamente de la <strong>Factura Comercial</strong> y de la <strong>Guía de
+                Remisión</strong> del exportador, garantizando una estricta trazabilidad y coherencia <span
+                class="termino-tecnico">aduanera</span> desde que la carga sale del almacén local hasta que cruza la
+            frontera.</p>
+
+
+        <p>Para comprender la "dictadura del dato" en la logística internacional, el primer paso de un auditor es
+            revisar los documentos de origen. Observemos el cruce de información de una operación real de exportación de
+            uva de mesa:</p>
+
+
+        <div class="image-card">
+            <img src="https://i.ibb.co/GQxPr7Hb/Factura-comercial-de-exportacion-de-uva-de-mesa.png"
+                alt="Factura Comercial de exportación mostrando detalles de la venta, valor y descripción del producto">
+        </div>
+        <p style="text-align: center; font-size: 14px; color: #64748B; margin-top: -10px; margin-bottom: 30px;">
+            <em>Figura 1: Factura Comercial - Documento que rige la transacción financiera y comercial.</em>
+        </p>
+
+
+        <div class="image-card">
+            <img src="https://i.ibb.co/NdLkrLHJ/Guia-de-remision-remitente-exportacion-de-uva-de-mesa.png"
+                alt="Guía de Remisión de exportación mostrando pesos, transportista y firmas pendientes">
+        </div>
+        <p style="text-align: center; font-size: 14px; color: #64748B; margin-top: -10px; margin-bottom: 30px;">
+            <em>Figura 2: Guía de Remisión - Documento que ampara el traslado físico de la mercancía.</em>
+        </p>
+
+
+        <div class="case-card">
+            <h4>AUDITORÍA EN ACCIÓN: Consistencia Documental y la Realidad Operativa</h4>
+
+
+            <p>Al analizar ambos documentos, el liquidador logístico debe confirmar que la información es <strong>un
+                    reflejo exacto y consistente</strong>. En este caso de éxito, validamos que:</p>
+            <ul class="content-list">
+                <li><strong>El Peso Bruto Total:</strong> Ambos documentos marcan milimétricamente <strong>23,500.00
+                        KG</strong>.</li>
+                <li><strong>La Mercancía:</strong> La descripción "Fresh Red Globe Grapes" de la factura coincide con la
+                    naturaleza de la carga que se está movilizando en la guía.</li>
+                <li><strong>Los Actores:</strong> El remitente (exportador) es el mismo en ambos sistemas.</li>
+            </ul>
+
+
+            <hr style="margin: 20px 0;">
+
+
+            <p><strong>
+                    ¿Por qué la Guía de Remisión tiene campos en blanco?</strong></p>
+            <p>Es muy común que al recibir los documentos para llenar la Matriz Documentaria, la Guía de Remisión
+                presente marcadores de posición (ej. <em>[Company Name]</em>, <em>[Driver Name]</em>) o líneas de firma
+                y sellos vacíos (<em>Signature of Conductor</em>, <em>Recipient Stamp</em>). Esto no es un error, sino
+                un reflejo de los <strong>tiempos logísticos (Lead Times)</strong>:</p>
+
+
+            <ul class="content-list">
+                <li><strong>El Borrador Electrónico:</strong> El documento que recibe el liquidador suele ser un PDF
+                    generado por el sistema ERP (como SAP o un software de facturación) <em>antes</em> de que el camión
+                    llegue a la rampa de carga.</li>
+                <li><strong>Completado en Tiempo Real:</strong> Los datos del conductor y las placas del vehículo se
+                    llenan a mano o se re-imprimen en el instante en que la empresa de transporte asigna la unidad
+                    física que realizará el viaje.</li>
+                <li><strong>Firmas de Custodia:</strong> Las firmas y sellos finales solo se ejecutan cuando ocurre la
+                    transferencia física de responsabilidad: el conductor firma al subir la carga a su camión, y el
+                    puerto/almacén aduanero estampa su sello de recepción al final de la ruta.</li>
+            </ul>
+            <p>Por lo tanto, para efectos de transmitir la Matriz a la naviera, el auditor logístico extrae los
+                <strong>datos fijos de la carga</strong> (pesos, bultos y descripción) de esta versión preliminar, sin
+                necesidad de esperar las firmas físicas que ocurrirán horas después.
+            </p>
+        </div>
+
+
+        <p>La correcta validación de estos datos desde su origen es una decisión estratégica que blinda los <strong>tres
+                Pilares de Estabilidad Corporativa</strong>:</p>
+
+
+        <ul class="content-list">
+            <li><strong>Gestión de Riesgos:</strong> Previene contingencias legales, multas y bloqueos en las Aduanas
+                (entidad gubernamental que fiscaliza y grava el tráfico internacional de mercancías).</li>
+            <li><strong>Protección de Activos:</strong> Evita la degradación física o pérdida de valor comercial de las
+                cargas (especialmente perecederos) por inmovilizaciones prolongadas.</li>
+            <li><strong>Flujo de Caja (Cash flow):</strong> Protege la liquidez de la empresa al eliminar sobrecostos
+                imprevistos por penalidades o tarifas logísticas no presupuestadas.</li>
+        </ul>
+
+
+        <div class="nav-return-container">
+            <a href="#indice-principal" target="_self" class="nav-return-btn">⬆ VOLVER AL ÍNDICE</a>
+        </div>
+
+
+        <!-- SECCIÓN 2 -->
+        <a name="seccion-2" id="seccion-2"></a>
+        <h2>2. EL IDIOMA DEL TRANSPORTE: CÓDIGOS INTERNACIONALES DE NODOS LOGÍSTICOS</h2>
+
+
+        <p>Para que una computadora en China entienda que un contenedor va a Lima, Perú, y no a Lima, Ohio (EE. UU.), la
+            estandarización documental prohíbe el uso de nombres de ciudades en texto libre. Se exige el uso estricto de
+            dos sistemas:</p>
+
+
+        <ul class="content-list">
+            <li><strong>UN/LOCODE</strong> <span class="termino-tecnico">(Código de Ubicaciones de las Naciones
+                    Unidas)</span>: Usado en vía marítima y terrestre. Tiene 5 caracteres: 2 letras del país y 3 de la
+                localidad. ¿Dónde buscar la lista oficial? En el motor de búsqueda público del portal web de la UNECE
+                (Comisión Económica de las Naciones Unidas para Europa).</li>
+            <li><strong>IATA</strong> <span class="termino-tecnico">(Asociación Internacional de Transporte
+                    Aéreo)</span>: Usado en aviación comercial. Tiene 3 letras. ¿Dónde buscar la lista oficial? En el
+                motor "Airline and Airport Code Search" de la página web oficial de IATA.</li>
+        </ul>
+
+
+        <p>A continuación, un mapeo de nodos estratégicos globales y regionales:</p>
+
+
+        <p>Visualizar la escala de estos nodos nos ayuda a comprender por qué la codificación internacional es tan
+            estricta. Un puerto de origen estratégico como el Callao moviliza millones de TEUs anuales, donde un simple
+            dígito erróneo en la matriz puede extraviar la carga entre un laberinto de grúas y bloques de acero:</p>
+
+
+        <div class="image-card">
+            <img src="https://encrypted-tbn1.gstatic.com/licensed-image?q=tbn:ANd9GcRpj4QpeUYYBpAm572V0B8LN7oIrVFlTkNud-l53J19g7e9tLVvzCaxq5are_k1o1JzaWnRDoToNLyyPI4"
+                alt="Terminal Marítimo del Callao con grúas pórtico y miles de contenedores apilados">
+            <p style="font-size: 14px; margin-top: 10px; color: #64748B;"><em>Terminal Marítimo del Callao (PECLL)</em>
+            </p>
+        </div>
+
+
+        <div class="table-container">
+            <table>
+                <tr>
+                    <th style="width: 20%;">País</th>
+                    <th style="width: 25%;">Terminal Logístico</th>
+                    <th style="width: 15%;">Vía</th>
+                    <th style="width: 20%;">Código UN/LOCODE</th>
+                    <th style="width: 20%;">Código IATA</th>
+                </tr>
+                <tr>
+                    <td>Perú (Origen)</td>
+                    <td>Puerto del Callao</td>
+                    <td>Marítima</td>
+                    <td>PECLL</td>
+                    <td>N/A</td>
+                </tr>
+                <tr>
+                    <td>Perú (Origen)</td>
+                    <td>Puerto de Paita</td>
+                    <td>Marítima</td>
+                    <td>PEPAI</td>
+                    <td>N/A</td>
+                </tr>
+                <tr>
+                    <td>Perú (Origen)</td>
+                    <td>Aeropuerto Jorge Chávez</td>
+                    <td>Aérea</td>
+                    <td>N/A</td>
+                    <td>LIM</td>
+                </tr>
+                <tr>
+                    <td>Chile (Región)</td>
+                    <td>Puerto de Valparaíso</td>
+                    <td>Marítima</td>
+                    <td>CLVAP</td>
+                    <td>N/A</td>
+                </tr>
+                <tr>
+                    <td>Colombia (Región)</td>
+                    <td>Puerto de Buenaventura</td>
+                    <td>Marítima</td>
+                    <td>COBUN</td>
+                    <td>N/A</td>
+                </tr>
+                <tr>
+                    <td>Brasil (Región)</td>
+                    <td>Aeropuerto de Guarulhos</td>
+                    <td>Aérea</td>
+                    <td>N/A</td>
+                    <td>GRU</td>
+                </tr>
+                <tr>
+                    <td>EE. UU. (Global)</td>
+                    <td>Puerto / Aeropuerto de Miami</td>
+                    <td>Ambas</td>
+                    <td>USMIA</td>
+                    <td>MIA</td>
+                </tr>
+                <tr>
+                    <td>China (Global)</td>
+                    <td>Puerto de Shanghái</td>
+                    <td>Marítima</td>
+                    <td>CNSHA</td>
+                    <td>N/A</td>
+                </tr>
+                <tr>
+                    <td>P. Bajos (Global)</td>
+                    <td>Puerto de Róterdam</td>
+                    <td>Marítima</td>
+                    <td>NLRTM</td>
+                    <td>N/A</td>
+                </tr>
+                <tr>
+                    <td>E. Árabes (Global)</td>
+                    <td>Puerto de Jebel Ali (Dubái)</td>
+                    <td>Marítima</td>
+                    <td>AEJEA</td>
+                    <td>N/A</td>
+                </tr>
+                <tr>
+                    <td>Singapur (Global)</td>
+                    <td>Puerto de Singapur</td>
+                    <td>Marítima</td>
+                    <td>SGSIN</td>
+                    <td>N/A</td>
+                </tr>
+            </table>
+        </div>
+
+
+        <div class="case-card">
+            <h4>CASO DE ÉXITO APLICADO: La Sincronía Total de Nodos en Tránsito Multimodal</h4>
+
+
+            <div class="ficha-exito">
+                <div class="ficha-dato"><strong>La Teoría en Acción:</strong> Un proyecto de energía en Cusco compra
+                    paneles solares gigantes en Shanghái (CNSHA). La ruta será marítima hasta el Callao (PECLL) y luego
+                    terrestre hasta Cusco. Nacionalizar en el Callao sería lento, costoso y logísticamente complejo.
+                </div>
+
+
+                <div class="ficha-dato"><strong>Ejecución de la Matriz:</strong> El liquidador aplica la conectividad de
+                    nodos solicitando un <span class="termino-tecnico">Through B/L</span> (conocimiento de embarque que
+                    ampara todo el viaje multimodal bajo un solo contrato). En la matriz digital instruye rigurosamente
+                    las casillas de ruta.</div>
+            </div>
+
+
+            <p>Para que el régimen de Tránsito Aduanero funcione de manera automatizada, la matriz documentaria debe
+                alimentar el documento de transporte de forma milimétrica. Observe en el siguiente borrador cómo el
+                documento de propiedad no termina en el puerto de arribo, sino que extiende su responsabilidad legal
+                hasta el destino final en el interior del país:</p>
+
+
+            <div class="image-card">
+                <img src="https://i.ibb.co/S7Np3zxj/Through-Bill-of-Lading-destacando-las-casillas-de-Port-of-Discharge-y-Place-of-Final-Delivery.png"
+                    alt="Borrador de Through Bill of Lading destacando las casillas de Port of Discharge y Place of Final Delivery">
+            </div>
+            <p style="text-align: center; font-size: 14px; color: #64748B; margin-top: -10px; margin-bottom: 25px;">
+                <em>Figura 3: Estructura de un Through B/L para el tránsito internacional multimodal.</em>
+            </p>
+
+
+            <p><strong>Casillas Clave a Verificar:</strong></p>
+            <ul class="content-list">
+                <li><strong>Port of Discharge (Puerto de Descarga):</strong> Debe declarar estrictamente el código de
+                    nodo <span class="termino-tecnico">PECLL</span> (Puerto del Callao). Esto le indica a la naviera
+                    dónde bajar el contenedor del buque.</li>
+                <li><strong>Place of Final Delivery (Lugar de Entrega Final):</strong> Debe consignar explícitamente
+                    <em>Cusco, Perú</em>. Este es el dato que el sistema de SUNAT lee para validar que la carga califica
+                    para el régimen de tránsito y no para una importación definitiva en el puerto.
+                </li>
+            </ul>
+
+
+            <div class="case-result">
+                <strong>El Deber Ser (Resultado):</strong> El buque descarga en Callao. Al leer el nodo final en el
+                documento, SUNAT no exige el pago inmediato de aranceles ni abre el contenedor. Se le coloca un candado
+                electrónico GPS y la carga viaja sellada por los Andes. Los impuestos se liquidan en la aduana de Cusco
+                de forma rápida, barata y protegiendo la integridad física de los delicados paneles solares.
+            </div>
+        </div>
+
+
+        <div class="nav-return-container">
+            <a href="#indice-principal" target="_self" class="nav-return-btn">⬆ VOLVER AL ÍNDICE</a>
+        </div>
+
+
+        <a name="seccion-3" id="seccion-3"></a>
+        <h2>3. PARÁMETROS MÉTRICOS: FLETE, PESO FÍSICO Y PESO VOLUMÉTRICO</h2>
+
+
+        <p>Los transportistas venden "espacio" y "capacidad de carga". Por ello, cobran comparando el <strong>peso
+                físico</strong> frente al <strong>Peso Volumétrico</strong> <span class="termino-tecnico">(cálculo
+                matemático del espacio que ocupa la mercancía)</span>, facturando siempre el que resulte mayor.</p>
+
+
+        <h3>A. Vía Marítima - La Tarifa Plana (FCL - Full Container Load)</h3>
+        <p>Si alquilas un contenedor completo, pagas una tarifa plana llamada <span class="termino-tecnico">Box
+                Rate</span>. Como regla general, esta tarifa fluctúa drásticamente según la interacción de tres factores
+            operativos: la distancia (ruta), el tipo de contenedor (seco vs. refrigerado), y la temporalidad (<span
+                class="termino-tecnico">Peak Season</span> o temporada alta).</p>
+
+
+        <p><strong>Ejemplo de fluctuación tarifaria (Valores referenciales):</strong></p>
+        <div class="table-container">
+            <table>
+                <tr>
+                    <th style="width: 20%;">Ruta (Origen - Destino)</th>
+                    <th style="width: 15%;">Distancia</th>
+                    <th style="width: 15%;">Temporalidad</th>
+                    <th style="width: 25%;">Tipo de Contenedor</th>
+                    <th style="width: 25%;">Tarifa Estimada (Box Rate)</th>
+                </tr>
+                <tr>
+                    <td>Valparaíso - Miami</td>
+                    <td>Corta</td>
+                    <td>Off-Peak (Baja)</td>
+                    <td>20' Standard (Seco)</td>
+                    <td>$1,500 - $2,500 USD</td>
+                </tr>
+                <tr>
+                    <td>Valparaíso - Shanghái</td>
+                    <td>Larga</td>
+                    <td>Peak Season (Alta)</td>
+                    <td>40' Standard (Seco)</td>
+                    <td>$3,000 - $4,500 USD</td>
+                </tr>
+                <tr>
+                    <td>Valparaíso - Róterdam</td>
+                    <td>Media</td>
+                    <td>Off-Peak (Baja)</td>
+                    <td>40' High Cube Reefer</td>
+                    <td>$5,000 - $8,000 USD</td>
+                </tr>
+            </table>
+        </div>
+
+
+        <h3>B. Vía Aérea - El Peso Volumétrico</h3>
+        <p>En aviación, el espacio se agota antes que la capacidad de peso. IATA creó una constante matemática de
+            rentabilidad: el divisor volumétrico. <em>(Nota del auditor: El estándar para aerolíneas de carga general es
+                5000, mientras que servicios Courier como DHL/FedEx suelen usar 6000)</em>.</p>
+
+
+        <p>Para visualizar este impacto, imagina un palet que mide 100 cm de largo, 100 cm de ancho y 100 cm de alto, y
+            cuyo <strong>peso físico</strong> es de apenas 80 kg. La relación matemática se formaliza de la siguiente
+            manera:</p>
+
+
+        <div class="image-card" style="max-width: 300px;">
+            <img src="https://i.ibb.co/b5WmffKy/Diagramade-Cubo.png"
+                alt="Diagrama de un cubo 3D indicando las medidas de largo, ancho y alto (100x100x100 cm)">
+        </div>
+        <p style="text-align: center; font-size: 14px; color: #64748B; margin-top: -10px; margin-bottom: 20px;">
+            <em>Figura 4: Dimensiones requeridas para el cálculo de volumen.</em>
+        </p>
+
+
+        <div class="math-block">
+            Volumen = 100 &times; 100 &times; 100 = 1,000,000 cm&sup3;
+        </div>
+        <div class="math-block">
+            <strong>Peso Volum&eacute;trico</strong> = 1,000,000 cm&sup3; / 5000 cm&sup3;/kg = 200 kg
+        </div>
+
+
+        <p><strong>Conclusión:</strong> Al comparar el <strong>peso físico</strong> (80 kg) contra el <strong>peso
+                volumétrico</strong> (200 kg), la aerolínea ignorará la masa real y facturará el flete sobre la base de
+            los 200 kg para proteger su rentabilidad por el espacio ocupado.</p>
+
+
+        <p>Para aterrizar este concepto operativo, observemos un palet aéreo en plataforma. El volumen que ocupan los
+            bultos agota el espacio físico de la bodega cilíndrica del avión mucho antes de que el fuselaje alcance su
+            límite de peso estructural:</p>
+
+
+        <div class="image-card">
+            <img src="https://encrypted-tbn3.gstatic.com/licensed-image?q=tbn:ANd9GcQYzka3sfb5hAMaPXRZumekqMoOXCCmugtCMT_SDSMaPoAybpAvHP2azWP1zg7Pt3x0hRvDAEMJJkR85s8"
+                alt="Palet de carga aérea cubierto con malla frente a la turbina de un avión">
+            <p style="font-size: 14px; margin-top: 10px; color: #64748B;"><em>Figura 5: Carga paletizada lista para
+                    ingresar a la bodega aérea.</em></p>
+        </div>
+
+
+        <div class="nav-return-container">
+            <a href="#indice-principal" target="_self" class="nav-return-btn">⬆ VOLVER AL ÍNDICE</a>
+        </div>
+
+
+        <!-- SECCIÓN 4 -->
+        <a name="seccion-4" id="seccion-4"></a>
+        <h2>4. VARIABLES CRÍTICAS (MINI-GUÍAS OPERATIVAS PARA LLENAR LA MATRIZ)</h2>
+        <p>Al llenar la matriz, hay cuatro aspectos técnicos que el liquidador debe auditar. Un error aquí paraliza toda
+            la cadena.</p>
+
+
+        <h3>4.1. Tipos de Embalaje (Packaging Types)</h3>
+        <p>No basta con decir "bultos". La matriz exige especificar la naturaleza del empaque, porque de ello depende
+            cómo operan los montacargas:</p>
+        <ul class="content-list">
+            <li><strong>Pallet / Skid:</strong> Base de madera o plástico para estibar cajas.</li>
+            <li><strong>Cartons:</strong> Cajas de cartón corrugado sueltas.</li>
+            <li><strong>Drums (Tambores):</strong> Cilindros metálicos o plásticos para líquidos/químicos.</li>
+            <li><strong>IBC (Intermediate Bulk Container):</strong> Tanques cúbicos de 1,000 litros para graneles
+                líquidos.</li>
+        </ul>
+
+
+        <p>Reconocer visualmente estos embalajes es obligatorio para el auditor documental, ya que dictan el equipo de
+            manipulación en puerto. Por ejemplo, un tanque IBC requiere estiba e izaje diametralmente distinto a un
+            tambor cilíndrico tradicional:</p>
+
+
+        <div style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center;">
+            <div class="image-card" style="margin: 0; max-width: 400px;">
+                <img src="https://encrypted-tbn2.gstatic.com/licensed-image?q=tbn:ANd9GcQTKJx6LGazyDQjc_ti1B7evc4i9ja2jAip20rePDxqppyVWITkWopdXEZhtSaIiSMzP6YrqBt0R1YmI_Q"
+                    alt="Tanque IBC de 1000 litros con estructura metálica exterior">
+                <p style="font-size: 14px; margin-top: 10px; color: #64748B;"><em>IBC (Intermediate Bulk Container)</em>
+                </p>
+            </div>
+            <div class="image-card" style="margin: 0; max-width: 400px;">
+                <img src="https://encrypted-tbn1.gstatic.com/licensed-image?q=tbn:ANd9GcS1_R-1ZCSNWiveUbwkIbxtok7L1YbKxILCq5nhhGc_lAiB2DXnIGmhtS9U6KLjd22mQq-8MTeGr7uC9pc"
+                    alt="Tambores metálicos industriales de color azul apilados">
+                <p style="font-size: 14px; margin-top: 10px; color: #64748B;"><em>Drums (Tambores Industriales)</em></p>
+            </div>
+        </div>
+
+
+        <h3>4.2. Tipos de Contenedores Marítimos</h3>
+        <p>Debe coincidir el código del equipo con la mercancía.</p>
+        <ul class="content-list">
+            <li><strong>Dry Van / Standard (20' o 40'):</strong> Contenedor cerrado hermético para carga seca.</li>
+            <li><strong>High Cube (40' HC):</strong> Mide 1 pie (30 cm) más de alto. Ideal para mercancía voluminosa.
+            </li>
+            <li><strong>Reefer (Refrigerado):</strong> Tiene motor propio. Obliga a declarar la temperatura en la matriz
+                (Ej. "Set point a -18°C").</li>
+            <li><strong>Open Top / Flat Rack:</strong> Contenedores sin techo o sin paredes laterales para maquinaria
+                pesada.</li>
+        </ul>
+
+
+        <p>De igual manera, la codificación de la matriz debe coincidir milimétricamente con la arquitectura física del
+            equipo. A continuación, evidenciamos las diferencias estructurales entre un contenedor refrigerado y un Flat
+            Rack abierto:</p>
+
+
+        <div style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center;">
+            <div class="image-card" style="margin: 0; max-width: 400px;">
+                <img src="https://encrypted-tbn2.gstatic.com/licensed-image?q=tbn:ANd9GcSOHGoMyCeT6G3PNnuKsxa1NM9kdg9Np_x4LkmIUYBACMooC8hMREWje2XW3jQNlFOc-Lbgr5jwHdzPo4g"
+                    alt="Contenedor refrigerado (Reefer) de color blanco mostrando la unidad motora">
+                <p style="font-size: 14px; margin-top: 10px; color: #64748B;"><em>Contenedor Reefer (Refrigerado)</em>
+                </p>
+            </div>
+            <div class="image-card" style="margin: 0; max-width: 400px;">
+                <img src="https://encrypted-tbn0.gstatic.com/licensed-image?q=tbn:ANd9GcRTzmwCic_Zyu54eYcABoAtD9y9aX-th7EyJrFBQrQs6u7Tmn7j2isc51aYDc6V4T4SXYn1czSoHfvImGc"
+                    alt="Contenedor Flat Rack mostrando solo la base y las paredes de los extremos, sin techo ni laterales">
+                <p style="font-size: 14px; margin-top: 10px; color: #64748B;"><em>Contenedor Flat Rack</em></p>
+            </div>
+        </div>
+
+
+        <h3>4.3. La Carta de Crédito (UCP 600) y su dictadura documental</h3>
+        <p>Una <span class="termino-tecnico">Carta de Crédito (L/C)</span> es un instrumento bancario donde un banco
+            congela el dinero del comprador y solo le paga al vendedor si los documentos de transporte son 100%
+            perfectos.</p>
+        <p><strong>Auditoría:</strong> Si la L/C dice que la mercancía es "100% Cotton Peruvian T-Shirts", y en la
+            matriz solo pones "T-Shirts", el banco aplicará una <span class="termino-tecnico">Discrepancia
+                Documental</span> y se negará a transferir los fondos. La matriz debe ser una copia fiel de la L/C.
+            Adicionalmente, cada discrepancia genera penalizaciones financieras ("fees"), lo que degrada el flujo de
+            caja corporativo.</p>
+
+
+        <h3>4.4. Incoterms y la Condición de Flete</h3>
+        <p>Los <span class="termino-tecnico">Incoterms</span> definen quién paga el transporte. Esto se refleja en la
+            matriz en el campo de "Freight Payment":</p>
+        <ul class="content-list">
+            <li><span class="termino-tecnico">Freight Prepaid</span> (Flete pagado en origen): Se usa cuando el vendedor
+                asume el flete internacional (CPT, CIP, CFR, CIF, DAP, DDP).</li>
+            <li><span class="termino-tecnico">Freight Collect</span> (Flete pagadero en destino): Se usa cuando el
+                comprador asume el flete (EXW, FCA, FAS, FOB).</li>
+        </ul>
+
+
+        <div class="nav-return-container">
+            <a href="#indice-principal" target="_self" class="nav-return-btn">⬆ VOLVER AL ÍNDICE</a>
+        </div>
+
+
+        <!-- SECCIÓN 5 -->
+        <a name="seccion-5" id="seccion-5"></a>
+        <h2>5. ESTRUCTURA DE DATOS: LA ANATOMÍA MILIMÉTRICA DE LOS TÍTULOS DE TRANSPORTE</h2>
+        <p>La matriz documentaria alimenta el documento de transporte final. A continuación, exploraremos la información
+            exacta y obligatoria que debe auditarse en cada vía, demostrando su impacto a través de ejecuciones reales:
+        </p>
+
+
+        <h3>Vía Marítima: B/L (Bill of Lading - Conocimiento de Embarque)</h3>
+        <p>Es el único documento que sirve como "Título de Propiedad".</p>
+
+
+        <p>Antes de auditar sus variables críticas, debemos familiarizarnos con su anatomía. Este documento impreso,
+            alimentado directamente por nuestra matriz digital, posee un peso legal absoluto a nivel internacional y es
+            el protagonista de cualquier disputa aduanera:</p>
+
+
+        <div class="image-card">
+            <img src="https://encrypted-tbn0.gstatic.com/licensed-image?q=tbn:ANd9GcSI3JPaTsUCfybs6Md1GI5VGf1YyJ5_mzyJxIAZkXd5yguIWqbuVKof6stOCQGFgiiQJSkhQQmx02TkdAY"
+                alt="Documento impreso de un Bill of Lading (Conocimiento de Embarque) con un bolígrafo encima">
+            <p style="font-size: 14px; margin-top: 10px; color: #64748B;"><em>Anatomía de un Bill of Lading (B/L)</em>
+            </p>
+        </div>
+
+
+        <div class="case-card">
+            <h4>CASO DE ÉXITO APLICADO: El Despacho Marítimo Perfecto</h4>
+            <div class="ficha-exito">
+                <div class="ficha-dato"><strong>La Teoría en Acción</strong> Una hacienda en Ica vende un contenedor de
+                    uva (Red Globe) a Róterdam por $45,000 USD, financiados a través de una Carta de Crédito Bancaria.
+                </div>
+                <div class="ficha-dato"><strong>Ejecución de la Matriz</strong> El liquidador lee la Carta de Crédito y
+                    copia la descripción sin alterar una coma: "Fresh Red Globe Grapes, Category 1". Selecciona el
+                    equipo 40' High Cube Reefer y digita rigurosamente: Set point +2°C, ventilación abierta al 15%.
+                    Ingresa el HS Code 0806.10 y el número de precinto físico. Transmite la matriz digital 24 horas
+                    antes del Doc Cut-Off.</div>
+            </div>
+            <div class="case-result">
+                <strong>El Deber Ser (Resultado):</strong> La naviera emite un B/L impecable. El banco en Europa revisa
+                el documento, no encuentra ninguna discrepancia documental y transfiere los $45,000 USD en 48 horas. La
+                uva llega fresca gracias a la instrucción de temperatura.
+            </div>
+        </div>
+
+
+        <h3>Vía Aérea: AWB (Air Waybill - Guía Aérea)</h3>
+        <p>Solo es un contrato de transporte. Se rige por la velocidad y el peso volumétrico.</p>
+
+
+        <div class="case-card">
+            <h4>CASO DE ÉXITO APLICADO: El Rescate Aéreo - Operación AOG</h4>
+            <div class="ficha-exito">
+                <div class="ficha-dato"><strong>La Teoría en Acción</strong> Un avión comercial sufre una avería en el
+                    Aeropuerto Jorge Chávez y necesita un repuesto urgente desde Miami. Esto es una situación <span
+                        class="termino-tecnico">AOG (Aircraft on Ground)</span>, donde cada hora en tierra cuesta miles
+                    de dólares.</div>
+                <div class="ficha-dato"><strong>Ejecución de la Matriz</strong> El coordinador llena la Matriz del AWB.
+                    En la casilla de Handling Information, digita el código universal "AOG - URGENT". Declara el peso
+                    volumétrico exacto y marca Freight Collect. Transmite electrónicamente el e-AWB a SUNAT antes de que
+                    el avión despegue de Miami.</div>
+            </div>
+            <div class="case-result">
+                <strong>El Deber Ser (Resultado):</strong> Gracias a la transmisión anticipada del e-AWB, el Agente de
+                Aduanas solicita un "Despacho Urgente". La aduana otorga el permiso de retiro mientras el avión aún
+                vuela. Al aterrizar, la pieza va directamente a la pista para reparar el avión, mitigando el impacto
+                financiero.
+            </div>
+        </div>
+
+
+        <h3>Vía Terrestre: Carta Porte (CRT / CPIC)</h3>
+        <p>Estandarizado regionalmente como <span class="termino-tecnico">CRT</span> para el Cono Sur o <span
+                class="termino-tecnico">CPIC</span> para la Comunidad Andina.</p>
+
+
+        <div class="case-card">
+            <h4>CASO DE ÉXITO APLICADO: La Frontera Transparente</h4>
+            <div class="ficha-exito">
+                <div class="ficha-dato"><strong>La Teoría en Acción</strong> Una fábrica en Lima exporta botellas de
+                    vidrio hacia Santiago de Chile. El camión cruzará el paso fronterizo de Santa Rosa y Chacalluta.
+                </div>
+                <div class="ficha-dato"><strong>Ejecución de la Matriz</strong> Para alimentar la CPIC y el Manifiesto
+                    Internacional de Carga (MIC/DTA), el coordinador digita los datos del camión con precisión
+                    quirúrgica: Tractor placa A1B-234 y Semirremolque placa Z9Y-876. Incluye el pasaporte del conductor
+                    y el HS Code.</div>
+            </div>
+            <div class="case-result">
+                <strong>El Deber Ser (Resultado):</strong> Al llegar a Tacna, el oficial escanea el documento. Las
+                placas físicas coinciden 100% con la matriz digital. El camión cruza la frontera en 3 horas sin
+                aperturas físicas ni inspecciones intrusivas.
+            </div>
+        </div>
+
+
+        <h3>Criterios Universales a Auditar en la Estructura de Datos:</h3>
+
+
+        <h4>A. Identificación de los Actores:</h4>
+        <ul class="content-list">
+            <li><strong>Shipper:</strong> Exportador (Nombre legal, RUC, dirección completa).</li>
+            <li><strong>Consignee:</strong> Importador. Atención: Si hay Carta de Crédito, aquí va la frase "To the
+                order of [Nombre del Banco]".</li>
+            <li><strong>Notify Party:</strong> A quién notifica la naviera al llegar (usualmente el Agente de Aduanas).
+            </li>
+        </ul>
+
+
+        <h4>B. El "Corazón" de la Carga:</h4>
+        <ul class="content-list">
+            <li><strong>Marks and Numbers (Marcas y Números):</strong> Lo que está impreso en las cajas (ej. "Lote 45,
+                Fragile").</li>
+            <li><strong>Description of Goods:</strong> Ej. "Repuestos de acero para maquinaria agrícola".</li>
+            <li><strong>HS Code <span class="termino-tecnico">(Harmonized System Code)</span>:</strong> Código
+                arancelario mundial de 6 dígitos creado por la OMA (Organización Mundial de Aduanas). Fundamental para
+                que Aduanas calcule impuestos (ej. 0901.11 para café).</li>
+            <li><strong>Mercancía IMO / UN Number:</strong> Si es carga peligrosa (ej. baterías de litio), exige el
+                número de 4 dígitos de la ONU para protocolos de emergencia de bomberos.</li>
+        </ul>
+
+
+        <div class="nav-return-container">
+            <a href="#indice-principal" target="_self" class="nav-return-btn">⬆ VOLVER AL ÍNDICE</a>
+        </div>
+
+
+        <!-- SECCIÓN 6 -->
+        <a name="seccion-6" id="seccion-6"></a>
+        <h2>6. TRANSMISIÓN DIGITAL Y EL "DOC CUT-OFF"</h2>
+        <p>La matriz se transmite mediante <span class="termino-tecnico">EDI</span> (Intercambio Electrónico de Datos -
+            un lenguaje informático sin intervención humana). La industria usa INTTRA (Portal global que conecta a
+            exportadores con más de 60 líneas navieras en una sola pantalla).</p>
+
+
+        <p>Todo se rige por el <span class="termino-tecnico">Doc Cut-Off</span> (Cierre documental: fecha y hora límite
+            impuesta por la naviera para recibir la matriz). Un retraso genera el temido <span
+                class="termino-tecnico">Rolled Cargo</span> (Castigo donde la naviera no sube tu contenedor al barco y
+            lo deja abandonado en el puerto hasta el próximo viaje).</p>
+
+
+        <div class="nav-return-container">
+            <a href="#indice-principal" target="_self" class="nav-return-btn">⬆ VOLVER AL ÍNDICE</a>
+        </div>
+
+
+        <!-- SECCIÓN 7 -->
+        <a name="seccion-7" id="seccion-7"></a>
+        <h2>7. DESCOMPOSICIÓN ESTRUCTURAL: EL CÓDIGO DEL CONTENEDOR (ISO 6346)</h2>
+        <p>En la matriz te pedirán el número del contenedor. Jamás lo inventes. Todo contenedor posee una matrícula
+            internacional matemática.</p>
+
+
+        <p>Esta matrícula matemática siempre se encuentra troquelada de forma visible en la puerta derecha del equipo.
+            Su lectura correcta en el patio de maniobras es el primer paso antes de someterla a la validación
+            algorítmica:</p>
+
+
+        <div class="image-card">
+            <img src="https://encrypted-tbn0.gstatic.com/licensed-image?q=tbn:ANd9GcRgS94pSBHoYF3PGDPWcAiFcEX3Rbn_W-XJDCIZijcMoSDcJoE3ibqqoKDAuK3wm62PkMpqoZdhh2_QrIU"
+                alt="Puerta de un contenedor marítimo mostrando el código ISO y las especificaciones de peso">
+            <p style="font-size: 14px; margin-top: 10px; color: #64748B;"><em>Ubicación física de la matrícula ISO</em>
+            </p>
+        </div>
+
+
+        <p><strong>Anatomía: SUDU 123456 - 7</strong></p>
+        <ul class="content-list">
+            <li><strong>Prefijo del Propietario (SUD):</strong> Tres letras asignadas por el BIC (Oficina Internacional
+                de Contenedores). Ej: Hamburg SÜD.</li>
+            <li><strong>Identificador de Categoría (U):</strong> "U" es para contenedores convencionales.</li>
+            <li><strong>Número de Serie (123456):</strong> Seis dígitos numéricos internos.</li>
+            <li><strong>Dígito de Control (7):</strong> El salvavidas del auditor. Es un algoritmo matemático aplicado a
+                las letras y números anteriores. Si un operario se equivoca al tipear la matriz, el sistema INTTRA
+                detectará que el "7" no cuadra y arrojará "Error de Integridad".</li>
+        </ul>
+
+
+        <p><strong>El Algoritmo en Acción (Ejemplo: SUDU 123456):</strong></p>
+        <p>A falta de herramientas digitales, un liquidador experto puede validar la integridad de la matrícula
+            aplicando los valores matriciales estándar (donde A=10, B=12... Z=38, omitiendo múltiplos de 11)
+            multiplicados por el factor de peso de su posición (2<sup>n</sup>):</p>
+
+
+        <div class="table-container">
+            <table>
+                <tr>
+                    <th>Carácter</th>
+                    <th>Valor ISO</th>
+                    <th>Multiplicador (2<sup>n</sup>)</th>
+                    <th>Resultado Parcial</th>
+                </tr>
+                <tr>
+                    <td>S</td>
+                    <td>30</td>
+                    <td>1</td>
+                    <td>30</td>
+                </tr>
+                <tr>
+                    <td>U</td>
+                    <td>32</td>
+                    <td>2</td>
+                    <td>64</td>
+                </tr>
+                <tr>
+                    <td>D</td>
+                    <td>14</td>
+                    <td>4</td>
+                    <td>56</td>
+                </tr>
+                <tr>
+                    <td>U</td>
+                    <td>32</td>
+                    <td>8</td>
+                    <td>256</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>16</td>
+                    <td>16</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>2</td>
+                    <td>32</td>
+                    <td>64</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>3</td>
+                    <td>64</td>
+                    <td>192</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>4</td>
+                    <td>128</td>
+                    <td>512</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>5</td>
+                    <td>256</td>
+                    <td>1280</td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td>6</td>
+                    <td>512</td>
+                    <td>3072</td>
+                </tr>
+                <tr style="background-color: #E2E8F0; font-weight: bold;">
+                    <td colspan="3" style="text-align: right;">Suma Total:</td>
+                    <td>5542</td>
+                </tr>
+            </table>
+        </div>
+
+
+        <div class="case-result" style="border-left-color: #16A34A; background-color: #F0FDF4;">
+            <strong>Cálculo Final del Dígito:</strong> Se divide la suma total entre 11 (5542 ÷ 11 = 503.81). Se toma el
+            entero (503) y se multiplica por 11 (503 × 11 = 5533). La diferencia entre la suma original y este resultado
+            es el dígito de control: <strong>5542 - 5533 = 9</strong>.<br><br>
+            <em>Resolución del Error (SUDU 123456 - 7):</em> Como la matemática nos demuestra que el dígito real y
+            absoluto es el <strong>9</strong>, si el operario digita "SUDU 123456 - <strong>7</strong>" en la matriz, el
+            portal INTTRA bloqueará inmediatamente el envío por "Error de Integridad", previniendo así un costoso
+            <em>Rolled Cargo</em>.
+        </div>
+
+
+        <div class="nav-return-container">
+            <a href="#indice-principal" target="_self" class="nav-return-btn">⬆ VOLVER AL ÍNDICE</a>
+        </div>
+
+
+    </div>
+
+
+</body>
+
+
+</html>
