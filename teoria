@@ -848,93 +848,139 @@
         <p>Al llenar la matriz, hay cuatro aspectos técnicos que el liquidador debe auditar. Un error aquí paraliza toda
             la cadena.</p>
 
-
         <h3>4.1. Tipos de Embalaje (Packaging Types)</h3>
         <p>No basta con decir "bultos". La matriz exige especificar la naturaleza del empaque, porque de ello depende
             cómo operan los montacargas:</p>
         <ul class="content-list">
-            <li><strong>Pallet / Skid:</strong> Base de madera o plástico para estibar cajas.</li>
-            <li><strong>Cartons:</strong> Cajas de cartón corrugado sueltas.</li>
+            <li><strong>Pallet / Skid:</strong> Base de madera o plástico para estibar cajas. Permite manipulación con uñas de montacarga.</li>
+            <li><strong>Cartons:</strong> Cajas de cartón corrugado sueltas. Requieren manipulación manual o paletizado posterior.</li>
             <li><strong>Drums (Tambores):</strong> Cilindros metálicos o plásticos para líquidos/químicos.</li>
             <li><strong>IBC (Intermediate Bulk Container):</strong> Tanques cúbicos de 1,000 litros para graneles
                 líquidos.</li>
         </ul>
 
-
         <p>Reconocer visualmente estos embalajes es obligatorio para el auditor documental, ya que dictan el equipo de
-            manipulación en puerto. Por ejemplo, un tanque IBC requiere estiba e izaje diametralmente distinto a un
-            tambor cilíndrico tradicional:</p>
+            manipulación en puerto. A continuación, exploramos los tipos de empaques más recurrentes en la matriz:</p>
 
-
-        <div style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center;">
+        <div style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; margin-bottom: 20px;">
+            <div class="image-card" style="margin: 0; max-width: 400px;">
+                <img src="http://googleusercontent.com/image_collection/image_retrieval/2268034306646319283"
+                    alt="Pallet de madera o skid utilizado para estibar carga en almacén">
+                <p style="font-size: 14px; margin-top: 10px; color: #64748B;"><em>Figura 6: Pallet / Skid</em></p>
+            </div>
+            <div class="image-card" style="margin: 0; max-width: 400px;">
+                <img src="http://googleusercontent.com/image_collection/image_retrieval/2186642583864551728"
+                    alt="Cajas de cartón corrugado listas para despacho">
+                <p style="font-size: 14px; margin-top: 10px; color: #64748B;"><em>Figura 7: Cartons (Cajas)</em></p>
+            </div>
             <div class="image-card" style="margin: 0; max-width: 400px;">
                 <img src="https://encrypted-tbn2.gstatic.com/licensed-image?q=tbn:ANd9GcQTKJx6LGazyDQjc_ti1B7evc4i9ja2jAip20rePDxqppyVWITkWopdXEZhtSaIiSMzP6YrqBt0R1YmI_Q"
                     alt="Tanque IBC de 1000 litros con estructura metálica exterior">
-                <p style="font-size: 14px; margin-top: 10px; color: #64748B;"><em>IBC (Intermediate Bulk Container)</em>
-                </p>
+                <p style="font-size: 14px; margin-top: 10px; color: #64748B;"><em>Figura 8: IBC (Intermediate Bulk Container)</em></p>
             </div>
             <div class="image-card" style="margin: 0; max-width: 400px;">
                 <img src="https://encrypted-tbn1.gstatic.com/licensed-image?q=tbn:ANd9GcS1_R-1ZCSNWiveUbwkIbxtok7L1YbKxILCq5nhhGc_lAiB2DXnIGmhtS9U6KLjd22mQq-8MTeGr7uC9pc"
                     alt="Tambores metálicos industriales de color azul apilados">
-                <p style="font-size: 14px; margin-top: 10px; color: #64748B;"><em>Drums (Tambores Industriales)</em></p>
+                <p style="font-size: 14px; margin-top: 10px; color: #64748B;"><em>Figura 9: Drums (Tambores)</em></p>
             </div>
         </div>
-
 
         <h3>4.2. Tipos de Contenedores Marítimos</h3>
         <p>Debe coincidir el código del equipo con la mercancía.</p>
         <ul class="content-list">
-            <li><strong>Dry Van / Standard (20' o 40'):</strong> Contenedor cerrado hermético para carga seca.</li>
-            <li><strong>High Cube (40' HC):</strong> Mide 1 pie (30 cm) más de alto. Ideal para mercancía voluminosa.
-            </li>
-            <li><strong>Reefer (Refrigerado):</strong> Tiene motor propio. Obliga a declarar la temperatura en la matriz
-                (Ej. "Set point a -18°C").</li>
-            <li><strong>Open Top / Flat Rack:</strong> Contenedores sin techo o sin paredes laterales para maquinaria
-                pesada.</li>
+            <li><strong>Dry Van / Standard (20' o 40'):</strong> Contenedor cerrado hermético para carga seca (textiles, repuestos).</li>
+            <li><strong>High Cube (40' HC):</strong> Mide 1 pie (30 cm) más de alto que un estándar. Ideal para mercancía voluminosa.</li>
+            <li><strong>Reefer (Refrigerado):</strong> Tiene motor propio. Obliga a declarar la temperatura en la matriz (Ej. "Set point a -18°C").</li>
+            <li><strong>Open Top / Flat Rack:</strong> Contenedores sin techo o sin paredes laterales para maquinaria pesada.</li>
         </ul>
 
-
         <p>De igual manera, la codificación de la matriz debe coincidir milimétricamente con la arquitectura física del
-            equipo. A continuación, evidenciamos las diferencias estructurales entre un contenedor refrigerado y un Flat
-            Rack abierto:</p>
+            equipo. Validemos visualmente estas diferencias estructurales:</p>
 
-
-        <div style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center;">
+        <div style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; margin-bottom: 20px;">
+            <div class="image-card" style="margin: 0; max-width: 400px;">
+                <img src="http://googleusercontent.com/image_collection/image_retrieval/10177265832451977671"
+                    alt="Contenedor Dry Van estándar para carga general">
+                <p style="font-size: 14px; margin-top: 10px; color: #64748B;"><em>Figura 10: Dry Van / Standard</em></p>
+            </div>
+            <div class="image-card" style="margin: 0; max-width: 400px;">
+                <img src="http://googleusercontent.com/image_collection/image_retrieval/9813595889210969762"
+                    alt="Contenedor High Cube de 40 pies, con franjas amarillas superiores indicando mayor altura">
+                <p style="font-size: 14px; margin-top: 10px; color: #64748B;"><em>Figura 11: High Cube (40' HC)</em></p>
+            </div>
             <div class="image-card" style="margin: 0; max-width: 400px;">
                 <img src="https://encrypted-tbn2.gstatic.com/licensed-image?q=tbn:ANd9GcSOHGoMyCeT6G3PNnuKsxa1NM9kdg9Np_x4LkmIUYBACMooC8hMREWje2XW3jQNlFOc-Lbgr5jwHdzPo4g"
                     alt="Contenedor refrigerado (Reefer) de color blanco mostrando la unidad motora">
-                <p style="font-size: 14px; margin-top: 10px; color: #64748B;"><em>Contenedor Reefer (Refrigerado)</em>
-                </p>
+                <p style="font-size: 14px; margin-top: 10px; color: #64748B;"><em>Figura 12: Reefer (Refrigerado)</em></p>
             </div>
             <div class="image-card" style="margin: 0; max-width: 400px;">
                 <img src="https://encrypted-tbn0.gstatic.com/licensed-image?q=tbn:ANd9GcRTzmwCic_Zyu54eYcABoAtD9y9aX-th7EyJrFBQrQs6u7Tmn7j2isc51aYDc6V4T4SXYn1czSoHfvImGc"
                     alt="Contenedor Flat Rack mostrando solo la base y las paredes de los extremos, sin techo ni laterales">
-                <p style="font-size: 14px; margin-top: 10px; color: #64748B;"><em>Contenedor Flat Rack</em></p>
+                <p style="font-size: 14px; margin-top: 10px; color: #64748B;"><em>Figura 13: Flat Rack</em></p>
             </div>
         </div>
 
-
         <h3>4.3. La Carta de Crédito (UCP 600) y su dictadura documental</h3>
-        <p>Una <span class="termino-tecnico">Carta de Crédito (L/C)</span> es un instrumento bancario donde un banco
-            congela el dinero del comprador y solo le paga al vendedor si los documentos de transporte son 100%
-            perfectos.</p>
-        <p><strong>Auditoría:</strong> Si la L/C dice que la mercancía es "100% Cotton Peruvian T-Shirts", y en la
-            matriz solo pones "T-Shirts", el banco aplicará una <span class="termino-tecnico">Discrepancia
-                Documental</span> y se negará a transferir los fondos. La matriz debe ser una copia fiel de la L/C.
-            Adicionalmente, cada discrepancia genera penalizaciones financieras ("fees"), lo que degrada el flujo de
-            caja corporativo.</p>
+        <p>El término <strong>L/C</strong> proviene de sus siglas en inglés, <span class="termino-tecnico">Letter of Credit</span>. Es un instrumento financiero de pago emitido por un banco internacional que garantiza que el vendedor recibirá sus fondos únicamente si cumple al 100% con la entrega de la documentación exigida.</p>
 
+        <p>Esta herramienta no es un mero acuerdo de confianza; opera bajo el amparo legal de las <strong>Reglas y Usos Uniformes Relativos a los Créditos Documentarios, Publicación 600 de la Cámara de Comercio Internacional (ICC)</strong>, universalmente conocidas como <strong>UCP 600</strong>. Bajo la doctrina UCP 600, los bancos negocian <em>exclusivamente sobre documentos</em>, ignorando por completo la carga física. Si un papel contiene un solo error ortográfico respecto a la L/C original, el banco detiene los fondos y levanta una <span class="termino-tecnico">Discrepancia Documental</span>.</p>
+
+        <div class="image-card">
+            <img src="http://googleusercontent.com/image_collection/image_retrieval/8163855393400095113"
+                alt="Documento de Carta de Crédito bancaria emitida bajo normativa UCP 600">
+            <p style="font-size: 14px; margin-top: 10px; color: #64748B;"><em>Figura 14: Letter of Credit (L/C) sometida a auditoría documental.</em></p>
+        </div>
+
+        <div class="case-card">
+            <h4>CASO DE ÉXITO APLICADO: La Ejecución Perfecta bajo UCP 600</h4>
+            <div class="ficha-exito">
+                <div class="ficha-dato"><strong>La Teoría en Acción:</strong> Una corporación textil exporta un contenedor de indumentaria. El banco del importador condiciona la liberación del dinero a la presentación de una matriz de transporte exacta.
+                </div>
+                <div class="ficha-dato"><strong>Ejecución de la Matriz:</strong> El liquidador audita la L/C y detecta que la mercancía se declara como <em>"100% Premium Cotton T-Shirts"</em>. Al llenar la matriz documentaria en INTTRA, el liquidador ignora descripciones genéricas como "T-Shirts" y transcribe <em>exactamente</em> la frase de la carta de crédito.</div>
+            </div>
+            <div class="case-result">
+                <strong>El Deber Ser (Resultado):</strong> El documento final es impreso como una copia fiel del crédito. El banco auditor valida la concordancia bajo la normativa UCP 600, no encuentra discrepancias documentales y transfiere los fondos de manera expedita, evitando los costosos "fees" de enmienda bancaria.
+            </div>
+        </div>
 
         <h3>4.4. Incoterms y la Condición de Flete</h3>
-        <p>Los <span class="termino-tecnico">Incoterms</span> definen quién paga el transporte. Esto se refleja en la
-            matriz en el campo de "Freight Payment":</p>
+        <p>Los <span class="termino-tecnico">Incoterms</span> definen en qué momento el vendedor transfiere el riesgo y el costo del transporte al comprador. Esta negociación comercial debe quedar fijada en la matriz documentaria a través del campo de "Freight Payment" (Condición de pago del flete):</p>
         <ul class="content-list">
-            <li><span class="termino-tecnico">Freight Prepaid</span> (Flete pagado en origen): Se usa cuando el vendedor
-                asume el flete internacional (CPT, CIP, CFR, CIF, DAP, DDP).</li>
-            <li><span class="termino-tecnico">Freight Collect</span> (Flete pagadero en destino): Se usa cuando el
-                comprador asume el flete (EXW, FCA, FAS, FOB).</li>
+            <li><span class="termino-tecnico">Freight Prepaid</span> (Flete pagado en origen): Se usa cuando el vendedor asume el pago del flete internacional (Ej. Incoterms CPT, CIP, CFR, CIF, DAP, DDP).</li>
+            <li><span class="termino-tecnico">Freight Collect</span> (Flete pagadero en destino): Se usa cuando el comprador asume el pago del flete (Ej. Incoterms EXW, FCA, FAS, FOB).</li>
         </ul>
 
+        <div class="case-card">
+            <h4>CASO DE ÉXITO APLICADO: Liberación Rápida con Freight Prepaid</h4>
+            <div class="ficha-exito">
+                <div class="ficha-dato"><strong>La Teoría en Acción:</strong> Una exportadora vende maquinaria bajo el Incoterm CIF. Según este término comercial, la fábrica vendedora es quien cubre económicamente el flete marítimo hasta el país de llegada.</div>
+                <div class="ficha-dato"><strong>Ejecución de la Matriz:</strong> El liquidador en origen instruye a la naviera marcando la casilla de flete como <span class="termino-tecnico">Freight Prepaid</span>.</div>
+            </div>
+            <div class="image-card" style="margin-top: 15px; margin-bottom: 15px;">
+                <img src="http://googleusercontent.com/image_collection/image_retrieval/3620908567141941526"
+                    alt="Sello de Freight Prepaid en un Conocimiento de Embarque (Bill of Lading)">
+                <p style="font-size: 14px; margin-top: 10px; color: #64748B;"><em>Figura 15: Sello de flete pagado en origen.</em></p>
+            </div>
+            <div class="case-result">
+                <strong>El Deber Ser (Resultado):</strong> El B/L se emite sellado como "Prepaid". Cuando el contenedor llega al puerto de descarga, la naviera local no retiene la mercancía por deudas de transporte, permitiendo que el cliente final agilice sus trámites de aduana de inmediato.
+            </div>
+        </div>
+
+        <div class="case-card">
+            <h4>CASO DE ÉXITO APLICADO: Control Logístico con Freight Collect</h4>
+            <div class="ficha-exito">
+                <div class="ficha-dato"><strong>La Teoría en Acción:</strong> Un importador compra insumos químicos bajo el Incoterm FOB. El importador, al tener mejores tarifas corporativas negociadas con su propia naviera, decide pagar el flete localmente a la llegada.</div>
+                <div class="ficha-dato"><strong>Ejecución de la Matriz:</strong> El agente del vendedor en origen llena la matriz marcando la instrucción de pago como <span class="termino-tecnico">Freight Collect</span>.</div>
+            </div>
+            <div class="image-card" style="margin-top: 15px; margin-bottom: 15px;">
+                <img src="http://googleusercontent.com/image_collection/image_retrieval/7019856031603342772"
+                    alt="Sello de Freight Collect indicando flete pagadero en destino">
+                <p style="font-size: 14px; margin-top: 10px; color: #64748B;"><em>Figura 16: Sello de flete pagadero en destino.</em></p>
+            </div>
+            <div class="case-result">
+                <strong>El Deber Ser (Resultado):</strong> El título de transporte viaja con la marca "Collect". A su arribo, el importador liquida la factura del flete en sus propias oficinas, reteniendo su capital de trabajo hasta el final del tránsito logístico y validando la llegada segura de sus activos.
+            </div>
+        </div>
 
         <div class="nav-return-container">
             <a href="#indice-principal" target="_self" class="nav-return-btn">⬆ VOLVER AL ÍNDICE</a>
