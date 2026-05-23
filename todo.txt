@@ -1,42 +1,171 @@
 Cápsula 1: Trazabilidad en Origen (La Raíz del Dato)
 Duración: 15 minutos.
-
 Contenido: Relación vinculante entre la Factura Comercial, Guía de Remisión y la Matriz Documentaria.
-
 Dinámica de Validación Autónoma: * El Simulador del Espejo: Se presenta en pantalla una Factura Comercial real escaneada. Al lado, una matriz digital con campos editables. El estudiante debe transcribir tres datos críticos (Peso Bruto, Tipo de Bulto y RUC). El sistema no le permite avanzar si confunde "Peso Neto" con "Peso Bruto" o si tipea un carácter erróneo, explicando inmediatamente la consecuencia aduanera de esa discrepancia.
 
 Cápsula 2: Georreferenciación y Nodos (El Idioma Logístico)
 Duración: 15 minutos.
-
 Contenido: Uso estricto de UN/LOCODE y códigos IATA para mitigar errores de destino geográfico.
-
 Dinámica de Validación Autónoma:
-
 Desafío de Enrutamiento "Anti-Error": Al alumno se le asigna un caso de despacho (Ej: "Carga textil urgente de Callao a Róterdam"). Se le presentan motores de búsqueda simulados de UNECE e IATA. El estudiante debe buscar y arrastrar el código correcto (PECLL, NLRTM, etc.) a las casillas del borrador documental. Si arrastra un código de aeropuerto para una vía marítima, el sistema genera una alerta visual explicando el rechazo operativo.
 
 Cápsula 3: La Física de la Carga (Pesos y Volúmenes)
 Duración: 20 minutos.
-
 Contenido: Box Rates marítimos vs. Peso Volumétrico IATA (Divisor 5000).
-
 Dinámica de Validación Autónoma:
-
 Calculadora de Liquidación Logística: El sistema le otorga al estudiante las dimensiones de 3 cargas distintas con pesos físicos variables. El alumno debe ingresar sus cálculos matemáticos paso a paso en una plantilla interactiva. La plataforma autoevalúa el resultado final en tiempo real: si el alumno factura por peso físico lo que debió facturarse por peso volumétrico, la herramienta le muestra gráficamente la pérdida financiera que le habría causado a la aerolínea o a la empresa.
 
 Cápsula 4: Blindaje Financiero y Legal (UCP 600 e Incoterms)
 Duración: 25 minutos.
-
 Contenido: Mitigación de discrepancias frente a Cartas de Crédito y condiciones de pago del flete (Prepaid vs. Collect).
-
 Dinámica de Validación Autónoma:
-
 Laboratorio "El Ojo del Auditor Bancario": El estudiante asume el rol de un oficial de cumplimiento de un banco internacional. Se le muestra una cláusula literal de una Carta de Crédito y un borrador de Conocimiento de Embarque (B/L). Mediante una herramienta de marcación digital (clipping), el alumno debe subrayar las palabras exactas que no coinciden. Al finalizar, la plataforma le calcula cuántos dólares en "fees" de enmienda evitó gracias a su auditoría y valida sus respuestas.
 
 Cápsula 5: Infraestructura Digital y Control Automático (ISO 6346 e INTTRA)
 Duración: 20 minutos.
-
 Contenido: Transmisión vía EDI, portales globales (INTTRA), Doc Cut-Off y algoritmo del contenedor.
-
 Dinámica de Validación Autónoma:
+Desactivación del Rolled Cargo: Un reloj en cuenta regresiva simula la proximidad del Doc Cut-Off. El alumno recibe la matrícula de un contenedor digitada con un error tipográfico en el número de serie. Utilizando una hoja de cálculo interactiva programada con la fórmula del algoritmo ISO 6346, el estudiante procesa los caracteres para hallar el dígito de control matemático real. Al corregirlo e insertarlo en el sistema antes de que el tiempo expire, "salva" la carga del Rolled Cargo, recibiendo un reporte de MANUAL PRÁCTICO: Laboratorio de Casos Integrales en Gestión Documentaria
+Instructor: David Huamán Román
+Objetivo de Aprendizaje: Analizar escenarios hiperrealistas de comercio exterior para que el estudiante logre identificar, auditar y resolver contingencias en la Matriz Documentaria, comprendiendo el impacto directo de sus decisiones en la rentabilidad corporativa.
+Introducción al Laboratorio
+En este recurso, dejaremos la teoría para entrar a la "cancha" operativa. Analizaremos ocho escenarios reales desglosados paso a paso. Para un operador logístico novato, un número equivocado es solo un "error de tipeo"; para un auditor experto, ese mismo número representa miles de dólares en pérdidas, contenedores bloqueados y clientes perdidos.
+Cada caso evaluará el impacto en nuestros tres Pilares de Estabilidad Corporativa: Gestión de Riesgos (legal/aduanas), Protección de Activos (la mercancía física) y Flujo de Caja (el dinero de la empresa).
+MÓDULO 1: Transporte Marítimo (El Dominio del Océano)
+✅ Caso 1: El Despacho Marítimo Perfecto
+El Escenario: Una hacienda en Ica, Perú, acaba de vender un contenedor de uva de mesa (variedad Red Globe) a un supermercado en Róterdam, Países Bajos. El valor de la venta es de $\$45,000\text{ USD}$, financiados a través de una Carta de Crédito Bancaria.
+El Procedimiento Paso a Paso:
+Lectura de Requisitos: El liquidador peruano lee la Carta de Crédito, la cual exige que el documento de transporte (Bill of Lading o B/L) diga exactamente: "Fresh Red Globe Grapes, Category 1".
+Llenado de la Matriz: Ingresa a la plataforma INTTRA. Copia y pega la descripción de la mercancía sin alterar una sola coma.
+Configuración Técnica: Selecciona el equipo 40' High Cube Reefer (contenedor refrigerado). En el campo de instrucciones de temperatura, digita rigurosamente: Set point +2°C, ventilación abierta al 15%.
+Validación Aduanera: Ingresa el HS Code (Partida Arancelaria) 0806.10 que corresponde a uvas frescas, y el número de precinto físico (candado de seguridad) colocado en la puerta del contenedor.
+Transmisión: Envía la matriz digital 24 horas antes del Doc Cut-Off (Cierre documental de la naviera).
+El Impacto Corporativo (Resultado):
+La naviera emite un B/L impecable. El banco en Europa revisa el documento, no encuentra ninguna discrepancia y transfiere los $\$45,000\text{ USD}$ a la cuenta del exportador peruano en 48 horas. La uva llega fresca gracias a la correcta instrucción de temperatura.
+❌ Caso 2: El Error de la Tara y el Contrabando Técnico
+El Escenario: Una constructora peruana importa pesadas bobinas de acero para construcción desde Taiwán hacia el Puerto del Callao.
+El Procedimiento Paso a Paso:
+El exportador en Taiwán envía un Excel (borrador) al liquidador indicando: Net Weight (Peso de la mercancía): $22,000\text{ kg}$ / Tare Weight (Peso de las paletas y soportes de madera): $1,500\text{ kg}$.
+El liquidador logístico, por inexperiencia y prisa, llena la Matriz Documentaria y en la casilla obligatoria de Gross Weight (Peso Bruto = Peso Neto + Tara) escribe $22,000\text{ kg}$, olvidando sumar los soportes de madera.
+La matriz se transmite y el B/L se imprime declarando $22,000\text{ kg}$.
+El Punto de Quiebre:
+El contenedor llega al Puerto del Callao y la grúa pórtico lo coloca sobre la balanza oficial del terminal. La balanza marca $23,500\text{ kg}$. El sistema portuario alerta a SUNAT (Aduanas) sobre una discrepancia de $1,500\text{ kg}$ no declarados.
+El Impacto Corporativo:
+Gestión de Riesgos: SUNAT asume que esos $1,500\text{ kg}$ sobrantes podrían ser mercancía de contrabando no declarada. Bloquea el contenedor y abre un canal rojo (Inspección física obligatoria).
+Protección de Activos: Para inspeccionar, sacan las bobinas de acero del contenedor y las dejan en el patio del puerto. La densa brisa marina del Callao oxida la primera capa del acero durante los 15 días que dura la investigación.
+Flujo de Caja: La constructora debe pagar $\$1,500\text{ USD}$ de Demurrage (penalidad por no devolver el contenedor vacío a tiempo) y pierde el 10% del valor comercial del acero por la oxidación.
+MÓDULO 2: Transporte Aéreo (La Carrera contra el Reloj)
+✅ Caso 3: El Rescate Aéreo (Operación AOG)
+El Escenario: Un avión comercial sufre una avería en el Aeropuerto Jorge Chávez (Lima). Necesita un repuesto urgente desde Miami para poder volar. A esto se le llama una situación AOG (Aircraft on Ground - Aeronave en tierra), donde cada hora que el avión no vuela cuesta decenas de miles de dólares.
+El Procedimiento Paso a Paso:
+El proveedor en Miami emite la factura y entrega la caja de $50\text{ kg}$ al almacén de la aerolínea carguera.
+El coordinador aéreo llena la Matriz (que aquí se convertirá en el Air Waybill o AWB).
+En la casilla de Handling Information (Instrucciones de manipulación), digita el código universal "AOG - URGENT".
+Declara el peso volumétrico exacto y marca Freight Collect (Flete pagadero en destino).
+Transmite electrónicamente el e-AWB a los sistemas de SUNAT en Perú antes de que el avión despegue de Miami.
+El Impacto Corporativo (Resultado):
+Gracias a la transmisión anticipada del e-AWB, el Agente de Aduanas en Perú solicita a SUNAT un "Despacho Urgente". La aduana otorga el permiso de retiro mientras el avión aún está volando. Al aterrizar, la pieza ni siquiera entra a los almacenes aduaneros; va directamente a la pista de aterrizaje para reparar el avión.
+❌ Caso 4: El Peligro Oculto (Las Baterías de Litio)
+El Escenario: Una empresa de tecnología en Lima cierra una gran venta corporativa de 50 laptops de alta gama para una firma de arquitectos en Bogotá, Colombia.
+El Procedimiento Paso a Paso:
+El despachador empaqueta las laptops y redacta la matriz documentaria.
+En la descripción de la mercancía, escribe simplemente: "Computer Equipment and Accessories".
+Omite adjuntar el certificado MSDS (Material Safety Data Sheet - Hoja de Seguridad).
+Ignora deliberadamente declarar que las laptops contienen baterías de litio, un artículo altamente inflamable en presiones atmosféricas altas.
+El Punto de Quiebre:
+La carga ingresa al terminal de carga del Aeropuerto Jorge Chávez. Al pasar por el escáner de rayos X obligatorio, los inspectores detectan las densidades oscuras de las baterías de litio, las cuales no están declaradas en la matriz como Mercancía IMO / UN 3481 (Clasificación internacional de carga peligrosa).
+El Impacto Corporativo:
+Gestión de Riesgos: La DGAC (Dirección General de Aeronáutica Civil) interviene de inmediato y bloquea el embarque por "Atentado contra la seguridad aeronáutica". Se inicia un proceso administrativo sancionador.
+Protección de Activos: El embarque es retenido en un búnker de carga peligrosa. Los arquitectos en Colombia, al no recibir sus equipos, cancelan el contrato y compran a un proveedor local.
+Flujo de Caja: La empresa peruana recibe una multa de $\$5,000\text{ USD}$ por parte de IATA por mala declaración y debe pagar el flete aéreo de ida y vuelta de los camiones para retirar su mercancía rechazada del aeropuerto.
+MÓDULO 3: Transporte Terrestre (Las Fronteras Físicas)
+✅ Caso 5: La Frontera Transparente
+El Escenario: Una fábrica en Lima exporta botellas de vidrio vacías hacia una viña en Santiago de Chile. El camión cruzará por el paso fronterizo de Santa Rosa (Perú) y Chacalluta (Chile).
+El Procedimiento Paso a Paso:
+Para cruzar fronteras en Sudamérica se usa la matriz que alimentará la CPIC (Carta Porte Internacional por Carretera) y el MIC/DTA (Manifiesto Internacional de Carga).
+El coordinador digita los datos del camión con precisión quirúrgica: Tractor placa A1B-234 y Semirremolque (la plataforma trasera) placa Z9Y-876.
+Incluye el nombre y número de pasaporte del conductor registrado.
+Declara el valor de la mercancía y la subpartida arancelaria.
+El Impacto Corporativo (Resultado):
+Al llegar a la frontera en Tacna, el oficial de aduanas escanea el código de barras del documento. Las placas del camión físico coinciden al 100% con la matriz digital. El semáforo aduanero marca verde. El camión cruza a Chile en 3 horas sin que nadie abra las puertas del furgón.
+❌ Caso 6: El Engaño del Chasis
+El Escenario: Una procesadora de alimentos en Arequipa importa 30 toneladas de Soya a granel desde Santa Cruz, Bolivia, ingresando por la frontera de Desaguadero.
+El Procedimiento Paso a Paso:
+El coordinador en Bolivia llena la Matriz de la Carta Porte declarando el Tractor placa BOL-111 y la tolva (el remolque trasero que lleva el grano) placa BOL-222.
+Horas antes de salir, la tolva BOL-222 sufre una pinchadura de llanta. El chofer, para no perder tiempo, engancha su tractor a otra tolva de la misma empresa (placa BOL-333) y emprende el viaje sin avisar a las oficinas para que modifiquen la matriz.
+El Punto de Quiebre:
+El camión llega a Desaguadero (a 3,800 metros sobre el nivel del mar). El oficial de SUNAT revisa los documentos: la CPIC dice tolva BOL-222, pero el metal frente a él dice BOL-333.
+El Impacto Corporativo:
+Gestión de Riesgos: Aduanas tipifica esto como "Sustitución de vehículo no autorizada" y "Presunta clonación". SUTRAN (Superintendencia de Transporte) prohíbe el ingreso del vehículo a carreteras peruanas.
+Protección de Activos: La soya queda atrapada en el frío extremo de la cordillera durante 14 días. Las fluctuaciones de temperatura generan condensación dentro de la tolva metálica, provocando la aparición de hongos en el 15% del cargamento.
+Flujo de Caja: Para rescatar la carga sana, el importador peruano debe contratar camiones locales que viajen vacíos hasta la frontera, pagar estibadores para trasladar la soya a mano (pala por pala) de un camión a otro, perdiendo $\$2,000\text{ USD}$ en logística de rescate.
+MÓDULO 4: Operaciones Multimodales (La Sincronía Total)
+✅ Caso 7: El Tránsito Sincronizado (Cusco)
+El Escenario: Un proyecto de energía en Cusco compra paneles solares gigantes en Shanghái (China). La ruta será: Buque de China al Callao, y luego tren/camión del Callao a Cusco.
+El Procedimiento Paso a Paso:
+El liquidador logístico sabe que nacionalizar (pagar impuestos y revisar) la carga en el congestionado Callao sería muy lento. Decide usar el régimen de Tránsito Aduanero.
+En la matriz marítima, solicita un "Through B/L" (un conocimiento de embarque que ampara todo el viaje multimodal).
+Llena la matriz indicando: Port of Discharge: PECLL (Callao) y Place of Final Delivery: Cusco, Perú.
+Declara explícitamente que la carga va en Tránsito bajo custodia aduanera.
+El Impacto Corporativo (Resultado):
+El buque descarga en Callao. Como el documento estipula que el destino final es Cusco, SUNAT en Callao no exige pago de impuestos ni abre el contenedor. Solo le colocan un candado electrónico GPS y lo suben al camión. El contenedor viaja sellado por los Andes y los impuestos se pagan en la aduana de Cusco, de forma rápida, barata y sin dañar los delicados paneles.
+❌ Caso 8: El Abandono Legal (El Desastre Boliviano)
+El Escenario: Una fábrica textil en La Paz, Bolivia, compra telares en Italia. Al no tener salida al mar, la ruta será marítima de Italia al Puerto de Matarani (Perú), y luego terrestre de Matarani a Bolivia.
+El Procedimiento Paso a Paso:
+El liquidador en Italia llena la matriz en INTTRA de forma rutinaria. Pone como Puerto de Descarga PEMAR (Matarani).
+Pone como Consignee (Importador) a "Textiles La Paz SRL, Bolivia".
+El gran error: Olvida marcar la casilla de "Cargo in Transit to Third Country" (Carga en tránsito a tercer país).
+El Punto de Quiebre:
+El barco llega a Matarani. El sistema portuario peruano lee la matriz y clasifica el contenedor como "Importación definitiva para Perú" (porque nadie le dijo al sistema que era un tránsito). Sin embargo, cuando SUNAT busca al dueño (Textiles La Paz SRL), descubre que no tiene RUC peruano y no puede iniciar el trámite de nacionalización. El sistema entra en un punto muerto ("Deadlock" burocrático).
+El Impacto Corporativo:
+Gestión de Riesgos: Al ser una importación bloqueada, el reloj de aduanas empieza a correr. En Perú, si una carga no es nacionalizada en 15 días calendario tras su llegada, cae en Abandono Legal (el Estado asume la propiedad de la mercancía por negligencia del importador).
+Protección de Activos: La aduana peruana confisca formalmente los telares valorizados en $\$200,000\text{ USD}$ y los programa para remate público. La mercancía se pierde para siempre.
+Flujo de Caja: La quiebra total. El importador boliviano demanda a la agencia de carga por negligencia corporativa, exigiendo la devolución de los $\$200,000\text{ USD}$ más indemnización por paralización de su fábrica. Todo por olvidar marcar una simple casilla en la Matriz Documentaria digital.
 
-Desactivación del Rolled Cargo: Un reloj en cuenta regresiva simula la proximidad del Doc Cut-Off. El alumno recibe la matrícula de un contenedor digitada con un error tipográfico en el número de serie. Utilizando una hoja de cálculo interactiva programada con la fórmula del algoritmo ISO 6346, el estudiante procesa los caracteres para hallar el dígito de control matemático real. Al corregirlo e insertarlo en el sistema antes de que el tiempo expire, "salva" la carga del Rolled Cargo, recibiendo un reporte de desempeño analítico sobre su velocidad y precisión.
+PARTE 1: Estrategia de Integración (El Ecosistema de Aprendizaje)
+No los trates como un PDF anexo de lectura. Estos casos son el "combustible" ideal para las dinámicas de las Cápsulas de Microlearning que diseñamos antes:
+
+El Caso 2 (Error de Tara) es el escenario perfecto para la Cápsula 1 (Trazabilidad). El estudiante debe detectar que el Peso Bruto de la matriz no cuadra con la suma de la Factura + el Packing List.
+
+El Caso 4 (Baterías de Litio) alimenta la Cápsula 5 (Métricas y Códigos UN).
+
+El Caso 6 (Engaño del Chasis) es la práctica ideal para la Cápsula 2 (Nodos y Georreferenciación) en fronteras terrestres.
+
+El Caso 8 (El Desastre Boliviano) es el "Jefe Final" para la Cápsula 4 (Blindaje Legal), donde un simple check en el sistema salva cientos de miles de dólares.
+
+En la sesión sincrónica (Masterclass), usas los Casos de Éxito (1, 3, 5, 7) para explicar la teoría y el deber ser. Luego, envías a los alumnos al LMS (Microlearning) a enfrentarse a los Casos de Fracaso (2, 4, 6, 8) para que ellos mismos auditen el error y apliquen la prevención.
+
+PARTE 2: Técnicas de Prevención Corporativa para Casos de Fracaso
+Para mantener el rigor hiperrealista de tu manual, las técnicas preventivas no deben ser simples consejos como "leer con más cuidado". Deben ser controles operativos, candados informáticos (Sistemas ERP/EDI) y Procedimientos Operativos Estandarizados (SOP).
+
+Aquí tienes la propuesta técnica para añadir al final de cada caso negativo:
+
+Para el Caso 2 (El Error de la Tara)
+Técnica de Prevención y Auditoría:
+
+Control de Triangulación Documental (Three-Way Match): El liquidador tiene estrictamente prohibido tipear el "Peso Bruto" basándose en la memoria o cálculos mentales. Debe aplicar la fórmula obligatoria: Net Weight (Mercancía) + Tare Weight (Embalaje/Pallets) = Gross Weight.
+
+Candado ERP: Configurar el software de despachos de la empresa para que la casilla de "Peso Bruto" se calcule automáticamente sumando los campos de peso neto y tara. Si el liquidador intenta forzar un número manual distinto, el sistema debe arrojar un "Hard Stop" (Bloqueo duro) que requiera la clave del supervisor para avanzar.
+
+Para el Caso 4 (El Peligro Oculto de las Baterías)
+Técnica de Prevención y Auditoría:
+
+Filtro Paramétrico de Palabras Clave (Keyword Screening): Establecer una regla de negocio en el área de exportaciones: Todo equipo electrónico (Laptops, celulares, maquinaria inalámbrica) exige, por defecto, solicitar al fabricante el certificado MSDS (Material Safety Data Sheet).
+
+Checklist de Bloqueo de Emisión: El Agente de Carga debe tener un protocolo de "Stop & Check". Antes de transmitir el AWB de cualquier producto clasificado como "Hardware o Electrónica", debe marcar una casilla de verificación confirmando si contiene o no Baterías de Litio (UN 3481). Si la respuesta es sí, el sistema exige adjuntar obligatoriamente la Declaración de Carga Peligrosa para poder enviar la matriz.
+
+Para el Caso 6 (El Engaño del Chasis)
+Técnica de Prevención y Auditoría:
+
+Protocolo de Gestión de Cambios de Última Hora (Last-Minute Change SOP): Establecer contractualmente con los transportistas terrestres que cualquier cambio de unidad física (Tractor o Remolque) invalida automáticamente los documentos impresos. El conductor tiene prohibido encender el motor hasta que la oficina central modifique la matriz electrónica y envíe el nuevo PDF a su celular.
+
+Check-list Fotográfico de Salida: Obligar al supervisor de patio o garita de seguridad a tomar una fotografía de la placa trasera (tolva) y delantera (tractor) y compararla físicamente contra la Carta Porte antes de levantar la talanquera de salida de la planta.
+
+Para el Caso 8 (El Abandono Legal Boliviano)
+Técnica de Prevención y Auditoría:
+
+Validación Cruzada de Nodos (Regla de Negocio EDI): Implementar una advertencia automatizada en el sistema de digitación (como INTTRA o el ERP logístico del exportador). La regla algorítmica es simple: SI [País del Puerto de Descarga] ES DIFERENTE A [País de Dirección del Consignee], ENTONCES desplegar una ventana emergente obligatoria (Pop-up) que pregunte: "Atención: El puerto y el país de destino final no coinciden. ¿Confirma que esta carga es un TRÁNSITO A TERCER PAÍS?".
+
+Auditoría de 4 Ojos (Maker-Checker): Para operaciones críticas como tránsitos multimodales internacionales, la matriz debe ser llenada por un operador (Maker) y aprobada electrónicamente por un supervisor (Checker) antes de viajar a la naviera. Un solo liquidador no debe tener el poder de cerrar un despacho de 200,000 dólares sin una segunda validación.
+
+Estos candados le darán al manual un peso enorme, porque dejan de enseñar solo "cómo llenar un documento" para enseñar "cómo gerenciar el flujo de información logística".
