@@ -1,0 +1,42 @@
+Cápsula 1: Trazabilidad en Origen (La Raíz del Dato)
+Duración: 15 minutos.
+
+Contenido: Relación vinculante entre la Factura Comercial, Guía de Remisión y la Matriz Documentaria.
+
+Dinámica de Validación Autónoma: * El Simulador del Espejo: Se presenta en pantalla una Factura Comercial real escaneada. Al lado, una matriz digital con campos editables. El estudiante debe transcribir tres datos críticos (Peso Bruto, Tipo de Bulto y RUC). El sistema no le permite avanzar si confunde "Peso Neto" con "Peso Bruto" o si tipea un carácter erróneo, explicando inmediatamente la consecuencia aduanera de esa discrepancia.
+
+Cápsula 2: Georreferenciación y Nodos (El Idioma Logístico)
+Duración: 15 minutos.
+
+Contenido: Uso estricto de UN/LOCODE y códigos IATA para mitigar errores de destino geográfico.
+
+Dinámica de Validación Autónoma:
+
+Desafío de Enrutamiento "Anti-Error": Al alumno se le asigna un caso de despacho (Ej: "Carga textil urgente de Callao a Róterdam"). Se le presentan motores de búsqueda simulados de UNECE e IATA. El estudiante debe buscar y arrastrar el código correcto (PECLL, NLRTM, etc.) a las casillas del borrador documental. Si arrastra un código de aeropuerto para una vía marítima, el sistema genera una alerta visual explicando el rechazo operativo.
+
+Cápsula 3: La Física de la Carga (Pesos y Volúmenes)
+Duración: 20 minutos.
+
+Contenido: Box Rates marítimos vs. Peso Volumétrico IATA (Divisor 5000).
+
+Dinámica de Validación Autónoma:
+
+Calculadora de Liquidación Logística: El sistema le otorga al estudiante las dimensiones de 3 cargas distintas con pesos físicos variables. El alumno debe ingresar sus cálculos matemáticos paso a paso en una plantilla interactiva. La plataforma autoevalúa el resultado final en tiempo real: si el alumno factura por peso físico lo que debió facturarse por peso volumétrico, la herramienta le muestra gráficamente la pérdida financiera que le habría causado a la aerolínea o a la empresa.
+
+Cápsula 4: Blindaje Financiero y Legal (UCP 600 e Incoterms)
+Duración: 25 minutos.
+
+Contenido: Mitigación de discrepancias frente a Cartas de Crédito y condiciones de pago del flete (Prepaid vs. Collect).
+
+Dinámica de Validación Autónoma:
+
+Laboratorio "El Ojo del Auditor Bancario": El estudiante asume el rol de un oficial de cumplimiento de un banco internacional. Se le muestra una cláusula literal de una Carta de Crédito y un borrador de Conocimiento de Embarque (B/L). Mediante una herramienta de marcación digital (clipping), el alumno debe subrayar las palabras exactas que no coinciden. Al finalizar, la plataforma le calcula cuántos dólares en "fees" de enmienda evitó gracias a su auditoría y valida sus respuestas.
+
+Cápsula 5: Infraestructura Digital y Control Automático (ISO 6346 e INTTRA)
+Duración: 20 minutos.
+
+Contenido: Transmisión vía EDI, portales globales (INTTRA), Doc Cut-Off y algoritmo del contenedor.
+
+Dinámica de Validación Autónoma:
+
+Desactivación del Rolled Cargo: Un reloj en cuenta regresiva simula la proximidad del Doc Cut-Off. El alumno recibe la matrícula de un contenedor digitada con un error tipográfico en el número de serie. Utilizando una hoja de cálculo interactiva programada con la fórmula del algoritmo ISO 6346, el estudiante procesa los caracteres para hallar el dígito de control matemático real. Al corregirlo e insertarlo en el sistema antes de que el tiempo expire, "salva" la carga del Rolled Cargo, recibiendo un reporte de desempeño analítico sobre su velocidad y precisión.
